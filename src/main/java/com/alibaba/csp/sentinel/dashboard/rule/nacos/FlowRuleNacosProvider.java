@@ -34,11 +34,11 @@ public class FlowRuleNacosProvider implements DynamicRuleProvider<List<FlowRuleE
     @Override
     public List<FlowRuleEntity> getRules(String appName) throws Exception {
         String dataID=new StringBuilder(appName).append(NacosConstants.DATA_ID_POSTFIX).toString();
-        String rules = configService.getConfig(dataID, nacosConfigProperties.getGroupId(), 3000);
-        logger.info("pull FlowRule from Nacos Config:{}",rules);
-        if (StringUtil.isEmpty(rules)) {
+        String nacosRules = configService.getConfig(dataID, nacosConfigProperties.getGroupId(), 3000);
+        logger.info("pull FlowRule from Nacos Config：{}",nacosRules);
+        if (StringUtil.isEmpty(nacosRules)) {
             return new ArrayList<>();
         }
-        return converter.convert(rules);
+        return converter.convert(nacosRules);
     }
 }
