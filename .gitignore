@@ -32,3 +32,5 @@ build/
 
 
 /log
+# Jrebel
+/src/main/resources/rebel.xml
