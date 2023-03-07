@@ -202,4 +202,47 @@
             </resource>
         </resources>
     </build>
+
+    <!--私服仓库-->
+    <repositories>
+        <repository>
+            <id>renjia</id>
+            <name>renjia Repository</name>
+            <url>https://nexus.ukerw.com/repository/maven-public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <!--私服插件仓库-->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>renjia</id>
+            <name>renjia Repository plugin</name>
+            <url>https://nexus.ukerw.com/repository/maven-public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <!--构件上传仓库-->
+    <distributionManagement>
+        <snapshotRepository>
+            <id>renjia-snapshots</id>
+            <name>renjia-snapshots</name>
+            <url>https://nexus.ukerw.com/repository/maven-snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>renjia-releases</id>
+            <name>renjia-releases</name>
+            <url>https://nexus.ukerw.com/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
 </project>
